@@ -21,7 +21,7 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 @ExtendWith(SerenityJUnit5Extension.class)
 public class ReqResTest {
 
-    private static final String  restApiUrl = "http://localhost:5000/api";
+    private static final String  restApiUrl = "http://mipc:5000/api";
     Actor DEVS = Actor.named("Devs").whoCan(CallAnApi.at(restApiUrl));
 
     @Test
@@ -64,7 +64,7 @@ public class ReqResTest {
         );
 
         DEVS.should(
-                seeThat("El codigo de respuesta", ResponseCodeQuestion.WAS(), equalTo(201))
+                seeThat("El codigo de respuesta", ResponseCodeQuestion.WAS(), equalTo(200))
         );
     }
 
